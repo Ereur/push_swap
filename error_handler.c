@@ -6,7 +6,7 @@
 /*   By: aamoussa <aamoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 09:15:09 by aamoussa          #+#    #+#             */
-/*   Updated: 2021/12/19 10:56:08 by aamoussa         ###   ########.fr       */
+/*   Updated: 2021/12/19 13:21:06 by aamoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,5 @@ void	error_handler(int fd, t_list	**head)
 		*head = tmp;
 	}
 	ft_putstr_fd("ERROR", fd);
-	system("leaks a.out");
 	exit(1);
 }

@@ -6,11 +6,54 @@
 /*   By: aamoussa <aamoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 13:39:49 by aamoussa          #+#    #+#             */
-/*   Updated: 2021/12/19 10:51:14 by aamoussa         ###   ########.fr       */
+/*   Updated: 2021/12/19 16:00:43 by aamoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
+
+static int	ft_check_space(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] && str[i] != ' ')
+			break ;
+		i++;
+	}
+	if (!str[i])
+		return (1);
+	return (0);
+}
+
+int	ft_digits(char *str)
+{
+	int	strlen;
+	int	i;
+
+	i = 0;
+	strlen = ft_strlen(str);
+	if (ft_check_space(str))
+		return (1);
+	i = 0;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	while (i < strlen)
+	{
+		while (str[i] && str[i] == ' ')
+		{
+			i++;
+			if (str[i] && (str[i] == '-' || str[i] == '+')
+				&& ft_isdigit(str[i + 1]))
+				i++;
+		}
+		while (str[i] && !ft_isdigit(str[i++]))
+			return (1);
+	}
+	return (0);
+}
 
 int	ft_check_duplicat(int digit, t_list	**head)
 {
@@ -29,7 +72,8 @@ int	ft_check_duplicat(int digit, t_list	**head)
 void	ft_receive_data(char **clean_args, t_list	**head)
 {
 	int		i;
-	int		digit;
+	long	digit;
+	t_list	*new_node;
 
 	i = 0;
 	while (clean_args[i])
@@ -41,7 +85,10 @@ void	ft_receive_data(char **clean_args, t_list	**head)
 			error_handler(2, head);
 		if (ft_check_duplicat(digit, head))
 			error_handler(2, head);
-		ft_lstadd_back(head, ft_lstnew(digit));
+		new_node = ft_lstnew(digit);
+		if (!new_node)
+			error_handler(2, head);
+		ft_lstadd_back(head, new_node);
 		i++;
 	}
 }
