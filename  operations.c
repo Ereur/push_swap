@@ -6,7 +6,7 @@
 /*   By: aamoussa <aamoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 12:02:47 by aamoussa          #+#    #+#             */
-/*   Updated: 2021/12/19 15:56:31 by aamoussa         ###   ########.fr       */
+/*   Updated: 2021/12/20 10:59:51 by aamoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,15 @@ void	pa(t_list **stack_a, t_list **stack_b)
 {
 	int		stack_b_len;
 	t_list	*tmp;
+	t_list	*new_node;
 
 	stack_b_len = ft_lstsize(*stack_b);
 	if (!stack_b_len)
 		return ;
-	ft_lstadd_front(stack_a, ft_lstnew((*stack_b)->content));
+	new_node = ft_lstnew((*stack_b)->content);
+	if (!new_node)
+		error_handler(2, stack_b);
+	ft_lstadd_front(stack_a, new_node);
 	tmp = (*stack_b);
 	*stack_b = (*stack_b)->next;
 	free(tmp);
@@ -52,11 +56,15 @@ void	pb(t_list **stack_b, t_list **stack_a)
 {
 	int		stack_a_len;
 	t_list	*tmp;
+	t_list	*new_node;
 
 	stack_a_len = ft_lstsize(*stack_a);
 	if (!stack_a_len)
 		return ;
-	ft_lstadd_front(stack_b, ft_lstnew((*stack_a)->content));
+	new_node = ft_lstnew((*stack_b)->content);
+	if (!new_node)
+		error_handler(2, stack_b);
+	ft_lstadd_front(stack_b, new_node);
 	tmp = (*stack_a);
 	*stack_a = (*stack_a)->next;
 	free(tmp);
