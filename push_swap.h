@@ -6,7 +6,7 @@
 /*   By: aamoussa <aamoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 09:43:17 by aamoussa          #+#    #+#             */
-/*   Updated: 2021/12/20 11:56:14 by aamoussa         ###   ########.fr       */
+/*   Updated: 2021/12/22 15:09:51 by aamoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,5 @@ void		rotate(t_list **stack);
 void		rr(t_list **stack_a, t_list **stack_b);
 void		rrotate(t_list **stack);
 void		selectionsort(t_list **stack_a, t_list **stack_b);
+void		mergesorte(t_list **stack_a);
 #endif
