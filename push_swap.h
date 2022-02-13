@@ -6,7 +6,7 @@
 /*   By: aamoussa <aamoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 09:43:17 by aamoussa          #+#    #+#             */
-/*   Updated: 2021/12/22 15:09:51 by aamoussa         ###   ########.fr       */
+/*   Updated: 2022/02/12 16:00:20 by aamoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,14 @@ typedef struct s_stack
 	int				stack_b_len;
 	struct s_stack	*next;
 }	t_stack;
+
+typedef struct s_datatoarr
+{
+	int					stack_size;
+	int					i;
+	int					*arr;	
+	t_list				*tmp;
+}	t_vars;
 
 int			ft_check(int ac, char **argv);
 t_list		*ft_getstack(int stack_len, char **stack_content);
@@ -38,5 +46,11 @@ void		rotate(t_list **stack);
 void		rr(t_list **stack_a, t_list **stack_b);
 void		rrotate(t_list **stack);
 void		selectionsort(t_list **stack_a, t_list **stack_b);
-void		mergesorte(t_list **stack_a);
+int			positionfstack(t_list *stack, int nb);
+int			ft_slnumber(t_list *stack, char spe);
+void		ft_sort_nbr(t_list *stack, int stack_size);
+void		ft_sort_five_nbr(t_list *stack, int stack_size, t_list *stack_b);
+int			*ft_datatoarray(t_list *stack);
+void		radix(t_list *stack_a, t_list *stack_b, int stack_size);
+
 #endif

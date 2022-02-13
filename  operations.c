@@ -6,7 +6,7 @@
 /*   By: aamoussa <aamoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 12:02:47 by aamoussa          #+#    #+#             */
-/*   Updated: 2021/12/20 10:59:51 by aamoussa         ###   ########.fr       */
+/*   Updated: 2022/02/12 10:26:07 by aamoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,9 @@ void	pb(t_list **stack_b, t_list **stack_a)
 	stack_a_len = ft_lstsize(*stack_a);
 	if (!stack_a_len)
 		return ;
-	new_node = ft_lstnew((*stack_b)->content);
+	new_node = ft_lstnew((*stack_a)->content);
 	if (!new_node)
-		error_handler(2, stack_b);
+		error_handler(2, stack_a);
 	ft_lstadd_front(stack_b, new_node);
 	tmp = (*stack_a);
 	*stack_a = (*stack_a)->next;
