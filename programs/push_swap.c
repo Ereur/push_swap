@@ -6,7 +6,7 @@
 /*   By: aamoussa <aamoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 09:31:00 by aamoussa          #+#    #+#             */
-/*   Updated: 2022/02/13 11:07:47 by aamoussa         ###   ########.fr       */
+/*   Updated: 2022/02/13 13:39:48 by aamoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int	main(int ac, char **argv)
 
 	stack_b = NULL;
 	stack_a = NULL;
+
 	if (ac >= 2)
 	{
 		stack_a = ft_check_args(ac, argv);

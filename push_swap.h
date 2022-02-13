@@ -6,7 +6,7 @@
 /*   By: aamoussa <aamoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 09:43:17 by aamoussa          #+#    #+#             */
-/*   Updated: 2022/02/12 16:00:20 by aamoussa         ###   ########.fr       */
+/*   Updated: 2022/02/13 14:50:38 by aamoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 # include <stdlib.h>
 # include "./libft/libft.h"
+# include "./get_next_line/get_next_line.h"
 
 typedef struct s_stack
 {
@@ -32,7 +33,6 @@ typedef struct s_datatoarr
 
 int			ft_check(int ac, char **argv);
 t_list		*ft_getstack(int stack_len, char **stack_content);
-void		ft_free(t_list **b);
 t_list		*ft_check_args(int ac, char **argv);
 int			ft_digits(char *str);
 void		ft_receive_data(char **clean_args, t_list	**head);
@@ -52,5 +52,6 @@ void		ft_sort_nbr(t_list *stack, int stack_size);
 void		ft_sort_five_nbr(t_list *stack, int stack_size, t_list *stack_b);
 int			*ft_datatoarray(t_list *stack);
 void		radix(t_list *stack_a, t_list *stack_b, int stack_size);
+void		rrr(t_list	**stack_a, t_list **stack_b);
 
 #endif
