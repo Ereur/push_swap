@@ -6,7 +6,7 @@
 /*   By: aamoussa <aamoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 12:02:47 by aamoussa          #+#    #+#             */
-/*   Updated: 2022/02/12 10:26:07 by aamoussa         ###   ########.fr       */
+/*   Updated: 2022/02/14 07:30:47 by aamoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,17 @@ void	swap(t_list **stack)
 	t_list	*head;
 	t_list	*tmp;
 
-	stack_len = ft_lstsize(*stack);
-	if (!stack_len)
-		return ;
-	head = *stack;
-	*stack = (*stack)->next;
-	tmp = (*stack)->next;
-	(*stack)->next = head;
-	head->next = tmp;
+	if (*stack && ft_lstsize(*stack) > 1)
+	{
+		stack_len = ft_lstsize(*stack);
+		if (!stack_len)
+			return ;
+		head = *stack;
+		*stack = (*stack)->next;
+		tmp = (*stack)->next;
+		(*stack)->next = head;
+		head->next = tmp;
+	}
 }
 
 void	ss(t_list **stack_a, t_list **stack_b)
