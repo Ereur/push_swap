@@ -6,7 +6,7 @@
 /*   By: aamoussa <aamoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 09:43:17 by aamoussa          #+#    #+#             */
-/*   Updated: 2022/02/13 14:50:38 by aamoussa         ###   ########.fr       */
+/*   Updated: 2022/02/14 13:43:34 by aamoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define PUSH_SWAP_H
 # include <stdlib.h>
 # include "./libft/libft.h"
-# include "./get_next_line/get_next_line.h"
+# include "./get_next_line.h"
 
 typedef struct s_stack
 {
@@ -53,5 +53,5 @@ void		ft_sort_five_nbr(t_list *stack, int stack_size, t_list *stack_b);
 int			*ft_datatoarray(t_list *stack);
 void		radix(t_list *stack_a, t_list *stack_b, int stack_size);
 void		rrr(t_list	**stack_a, t_list **stack_b);
-
+void		push_all_stack_a(t_list **stack_a, t_list **stack_b);
 #endif

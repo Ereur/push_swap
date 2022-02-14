@@ -6,7 +6,7 @@
 /*   By: aamoussa <aamoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 16:13:51 by aamoussa          #+#    #+#             */
-/*   Updated: 2022/02/13 14:22:12 by aamoussa         ###   ########.fr       */
+/*   Updated: 2022/02/14 15:17:01 by aamoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <limits.h>
-# include"../get_next_line/get_next_line.h"
+# include"../get_next_line.h"
 
 typedef struct s_list
 {

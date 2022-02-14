@@ -6,12 +6,12 @@
 /*   By: aamoussa <aamoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 10:58:18 by aamoussa          #+#    #+#             */
-/*   Updated: 2022/02/14 07:32:06 by aamoussa         ###   ########.fr       */
+/*   Updated: 2022/02/14 10:52:40 by aamoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../push_swap.h"
-#include"../get_next_line/get_next_line.h"
+#include"./push_swap_utils/push_swap.h"
+#include"./push_swap_utils/get_next_line.h"
 
 void	ft_ope(t_list **stack_a, t_list **stack_b, int indix)
 {

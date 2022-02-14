@@ -6,12 +6,11 @@
 /*   By: aamoussa <aamoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 09:36:09 by aamoussa          #+#    #+#             */
-/*   Updated: 2022/02/12 14:41:36 by aamoussa         ###   ########.fr       */
+/*   Updated: 2022/02/14 13:48:10 by aamoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
-#include<stdio.h>
 
 void	ft_sort_five_nbr(t_list *stack, int stack_size, t_list *stack_b)
 {
@@ -39,8 +38,5 @@ void	ft_sort_five_nbr(t_list *stack, int stack_size, t_list *stack_b)
 		write(1, "pb\n", 3);
 	}
 	ft_sort_nbr(stack, ft_lstsize(stack));
-	pa(&stack, &stack_b);
-	write(1, "pa\n", 3);
-	pa(&stack, &stack_b);
-	write(1, "pa\n", 3);
+	push_all_stack_a(&stack, &stack_b);
 }

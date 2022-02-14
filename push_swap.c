@@ -6,12 +6,11 @@
 /*   By: aamoussa <aamoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 09:31:00 by aamoussa          #+#    #+#             */
-/*   Updated: 2022/02/14 07:03:50 by aamoussa         ###   ########.fr       */
+/*   Updated: 2022/02/14 09:03:45 by aamoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../push_swap.h"
-#include<stdio.h>
+#include"./push_swap_utils/push_swap.h"
 
 int	main(int ac, char **argv)
 {
