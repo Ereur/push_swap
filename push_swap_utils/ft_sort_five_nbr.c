@@ -6,7 +6,7 @@
 /*   By: aamoussa <aamoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 09:36:09 by aamoussa          #+#    #+#             */
-/*   Updated: 2022/02/14 13:48:10 by aamoussa         ###   ########.fr       */
+/*   Updated: 2022/02/16 06:57:22 by aamoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_sort_five_nbr(t_list *stack, int stack_size, t_list *stack_b)
 {
 	int	a;
-
+	int indix = 0;
 	a = 2;
 	if (ft_issorted(stack))
 		return ;

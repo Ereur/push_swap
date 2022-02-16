@@ -6,7 +6,7 @@
 /*   By: aamoussa <aamoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 09:43:17 by aamoussa          #+#    #+#             */
-/*   Updated: 2022/02/14 13:43:34 by aamoussa         ###   ########.fr       */
+/*   Updated: 2022/02/16 06:55:13 by aamoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,15 @@ typedef struct s_datatoarr
 	t_list				*tmp;
 }	t_vars;
 
+typedef struct s_chunks
+{
+	int	chunk_one[1];
+	int	chunk_two[1];
+	int	chunk_thre[1];
+	int	chunk_four[1];
+	int	chunk_five[1];
+}	t_chunk;
+
 int			ft_check(int ac, char **argv);
 t_list		*ft_getstack(int stack_len, char **stack_content);
 t_list		*ft_check_args(int ac, char **argv);
@@ -53,5 +62,9 @@ void		ft_sort_five_nbr(t_list *stack, int stack_size, t_list *stack_b);
 int			*ft_datatoarray(t_list *stack);
 void		radix(t_list *stack_a, t_list *stack_b, int stack_size);
 void		rrr(t_list	**stack_a, t_list **stack_b);
-void		push_all_stack_a(t_list **stack_a, t_list **stack_b);
+//void		push_all_stack_a(t_list **stack_a, t_list **stack_b, int bits);
+void	push_all_stack_a(t_list **stack_a, t_list **stack_b);
+int			ft_issortedtwo(t_list *stack);
+
+t_chunk		ft_chunk(t_list *stack_a, t_list *stack_b);
 #endif
