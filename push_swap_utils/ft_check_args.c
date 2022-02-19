@@ -6,12 +6,13 @@
 /*   By: aamoussa <aamoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 13:39:49 by aamoussa          #+#    #+#             */
-/*   Updated: 2022/02/14 11:46:12 by aamoussa         ###   ########.fr       */
+/*   Updated: 2022/02/19 10:29:12 by aamoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
 
+//handling the case of empty args "" || " "
 static int	ft_check_space(char *str)
 {
 	int	i;
@@ -28,6 +29,8 @@ static int	ft_check_space(char *str)
 	return (0);
 }
 
+//check if the string contains only digits and return 1 in case of error || 
+// return 0 if the string clean and holds only digits
 int	ft_digits(char *str)
 {
 	int	strlen;
@@ -38,8 +41,6 @@ int	ft_digits(char *str)
 	if (ft_check_space(str))
 		return (1);
 	i = 0;
-	if (str[i] == '-' || str[i] == '+')
-		i++;
 	while (i < strlen)
 	{
 		while (str[i] && str[i] == ' ')
@@ -49,6 +50,8 @@ int	ft_digits(char *str)
 				&& ft_isdigit(str[i + 1]))
 				i++;
 		}
+		if (str[i] == '-' || str[i] == '+')
+			i++;
 		while (str[i] && !ft_isdigit(str[i++]))
 			return (1);
 	}
@@ -78,16 +81,13 @@ void	ft_receive_data(char **clean_args, t_list	**head)
 	i = 0;
 	while (clean_args[i])
 	{
-		if (ft_strlen(clean_args[i]) > 11)
-			error_handler(2, head);
-		digit = ft_atoi(clean_args[i]);
-		if (digit > INT_MAX || digit < INT_MIN)
-			error_handler(2, head);
-		if (ft_check_duplicat(digit, head))
-			error_handler(2, head);
+		ft_check_int(&digit, clean_args, head, i);
 		new_node = ft_lstnew(digit);
 		if (!new_node)
+		{	
+			ft_free_clean_args(clean_args);
 			error_handler(2, head);
+		}		
 		ft_lstadd_back(head, new_node);
 		i++;
 	}

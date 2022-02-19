@@ -6,12 +6,11 @@
 /*   By: aamoussa <aamoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 07:37:08 by aamoussa          #+#    #+#             */
-/*   Updated: 2022/02/14 11:46:49 by aamoussa         ###   ########.fr       */
+/*   Updated: 2022/02/17 11:43:28 by aamoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
-#include<stdio.h>
 
 int	ft_slnumber(t_list *stack, char spe)
 {

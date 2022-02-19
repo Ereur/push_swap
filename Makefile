@@ -6,23 +6,39 @@ FUNC_BONUS = checker.c ./push_swap_utils/get_next_line.c ./push_swap_utils/ft_ch
 			 ./push_swap_utils/operations.c ./push_swap_utils/operations1.c ./push_swap_utils/libft/libft.a
 NAME = push_swap
 NAME_BONUS = checker
+OBJ = *.o
+NONE='\033[0m'
+GREEN='\033[32m'
+YELLOW='\033[33m'
+GRAY='\033[2;37m'
+CURSIVE='\033[3m'
 
 all: $(NAME)
 
-$(NAME): libft
-	gcc $(FUNC) -o push_swap
+$(NAME):
+	@echo  $(CURSIVE)$(GRAY) "-MAKING PUSH_SWAP..." $(NONE)
+	@cd ./push_swap_utils/libft && make
+	@cd ./push_swap_utils/libft && make bonus
+	@$(CC) $(CFLAGS) $(FUNC) -o $(NAME)
+	@echo  $(GREEN) "DONE!"
 
-libft:  
-	cd ./push_swap_utils/libft && make
-	cd ./push_swap_utils/libft && make bonus
-
-bonus: libft $(NAME_BONUS)
+bonus: $(NAME_BONUS)
 
 $(NAME_BONUS):
-	gcc $(FUNC_BONUS) -o checker
+	@echo  $(CURSIVE)$(GRAY) "-MAKING BONUS..." $(NONE)
+	@cd ./push_swap_utils/libft && make
+	@cd ./push_swap_utils/libft && make bonus
+	@$(CC) $(CFLAGS) $(FUNC_BONUS) -o $(NAME_BONUS)
+	@echo  $(GREEN) "DONE!"
 
 clean:
-	rm -f $(NAME) $(NAME_BONUS)
-	cd ./push_swap_utils/libft/ && rm -f *.o
+	@echo $(CURSIVE)$(GRAY) "     - Removing object files..." $(NONE)
+	@rm -rf $(OBJ)
+	@cd ./push_swap_utils/libft && make clean
+
+fclean: clean
+	@echo $(CURSIVE)$(GRAY) "     - Removing $(NAME)..." $(NONE)
+	@rm -rf $(NAME) $(NAME_BONUS)
+	@cd ./push_swap_utils/libft && make fclean
 
 .PHONY: re fclean all clean bonus
