@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*    operations.c                                      :+:      :+:    :+:   */
+/*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aamoussa <aamoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 12:02:47 by aamoussa          #+#    #+#             */
-/*   Updated: 2022/02/14 07:30:47 by aamoussa         ###   ########.fr       */
+/*   Updated: 2022/02/20 11:11:07 by aamoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,35 +40,27 @@ void	ss(t_list **stack_a, t_list **stack_b)
 void	pa(t_list **stack_a, t_list **stack_b)
 {
 	int		stack_b_len;
-	t_list	*tmp;
 	t_list	*new_node;
 
 	stack_b_len = ft_lstsize(*stack_b);
 	if (!stack_b_len)
 		return ;
-	new_node = ft_lstnew((*stack_b)->content);
-	if (!new_node)
-		error_handler(2, stack_b);
-	ft_lstadd_front(stack_a, new_node);
-	tmp = (*stack_b);
+	new_node = *stack_b;
 	*stack_b = (*stack_b)->next;
-	free(tmp);
+	new_node->next = *stack_a;
+	*stack_a = new_node;
 }
 
 void	pb(t_list **stack_b, t_list **stack_a)
 {
 	int		stack_a_len;
-	t_list	*tmp;
 	t_list	*new_node;
 
 	stack_a_len = ft_lstsize(*stack_a);
 	if (!stack_a_len)
 		return ;
-	new_node = ft_lstnew((*stack_a)->content);
-	if (!new_node)
-		error_handler(2, stack_a);
-	ft_lstadd_front(stack_b, new_node);
-	tmp = (*stack_a);
+	new_node = *stack_a;
 	*stack_a = (*stack_a)->next;
-	free(tmp);
+	new_node->next = *stack_b;
+	*stack_b = new_node;
 }

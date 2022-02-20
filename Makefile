@@ -9,14 +9,13 @@ NAME_BONUS = checker
 OBJ = *.o
 NONE='\033[0m'
 GREEN='\033[32m'
-YELLOW='\033[33m'
 GRAY='\033[2;37m'
 CURSIVE='\033[3m'
 
 all: $(NAME)
 
 $(NAME):
-	@echo  $(CURSIVE)$(GRAY) "-MAKING PUSH_SWAP..." $(NONE)
+	@echo $(CURSIVE)$(GRAY) "-MAKING PUSH_SWAP..." $(NONE)
 	@cd ./push_swap_utils/libft && make
 	@cd ./push_swap_utils/libft && make bonus
 	@$(CC) $(CFLAGS) $(FUNC) -o $(NAME)
@@ -40,5 +39,7 @@ fclean: clean
 	@echo $(CURSIVE)$(GRAY) "     - Removing $(NAME)..." $(NONE)
 	@rm -rf $(NAME) $(NAME_BONUS)
 	@cd ./push_swap_utils/libft && make fclean
+
+re : fclean all
 
 .PHONY: re fclean all clean bonus
