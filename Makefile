@@ -1,5 +1,5 @@
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 FUNC =  push_swap.c ./push_swap_utils/ft_datatoarray.c  ./push_swap_utils/operations.c  ./push_swap_utils/operations1.c ./push_swap_utils/error_handler.c \
 		./push_swap_utils/ft_check_args.c ./push_swap_utils/ft_radix.c ./push_swap_utils/ft_sort_five_nbr.c ./push_swap_utils/ft_sort_nbr.c ./push_swap_utils/libft/libft.a
 FUNC_BONUS = checker.c ./push_swap_utils/get_next_line.c ./push_swap_utils/ft_check_args.c ./push_swap_utils/error_handler.c \

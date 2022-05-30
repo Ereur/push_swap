@@ -6,21 +6,11 @@
 /*   By: aamoussa <aamoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 21:20:54 by aamoussa          #+#    #+#             */
-/*   Updated: 2022/02/13 12:06:03 by aamoussa         ###   ########.fr       */
+/*   Updated: 2022/05/30 20:38:06 by aamoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
-
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
 
 void	ft_free(char **b)
 {

@@ -6,7 +6,7 @@
 /*   By: aamoussa <aamoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 12:17:43 by aamoussa          #+#    #+#             */
-/*   Updated: 2022/02/14 11:46:07 by aamoussa         ###   ########.fr       */
+/*   Updated: 2022/05/30 21:04:33 by aamoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	sortarray(int *arr, int len)
 		{
 			if (arr[j] < arr[min])
 				min = j;
-				j++;
+			j++;
 		}
 		tmp = arr[i];
 		arr[i] = arr[min];
@@ -37,7 +37,7 @@ void	sortarray(int *arr, int len)
 	}
 }
 
-int	*ft_datatoarray(t_list *stack)
+void	ft_datatoarray(t_list *stack)
 {
 	t_vars	var;
 
@@ -62,5 +62,4 @@ int	*ft_datatoarray(t_list *stack)
 			var.tmp->content = var.i;
 		var.tmp = var.tmp->next;
 	}
-	return (var.arr);
 }

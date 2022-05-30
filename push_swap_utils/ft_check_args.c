@@ -6,7 +6,7 @@
 /*   By: aamoussa <aamoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 13:39:49 by aamoussa          #+#    #+#             */
-/*   Updated: 2022/02/19 10:29:12 by aamoussa         ###   ########.fr       */
+/*   Updated: 2022/05/30 22:43:20 by aamoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	ft_digits(char *str)
 				&& ft_isdigit(str[i + 1]))
 				i++;
 		}
-		if (str[i] == '-' || str[i] == '+')
+		if (str[i + 1] && (str[i] == '-' || str[i] == '+'))
 			i++;
 		while (str[i] && !ft_isdigit(str[i++]))
 			return (1);

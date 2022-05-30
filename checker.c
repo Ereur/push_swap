@@ -6,7 +6,7 @@
 /*   By: aamoussa <aamoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 10:58:18 by aamoussa          #+#    #+#             */
-/*   Updated: 2022/02/14 10:52:40 by aamoussa         ###   ########.fr       */
+/*   Updated: 2022/05/30 22:43:48 by aamoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	get_line(t_list **stack_a, t_list **stack_b)
 			ft_ope(stack_a, stack_b, indix);
 		if (!ft_strnstr(str, line, ft_strlen(str), &indix))
 		{
-			write (1, "KO\n", 3);
+			write (1, "Error\n", 3);
 			exit(1);
 		}
 	}
