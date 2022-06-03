@@ -6,7 +6,7 @@
 /*   By: aamoussa <aamoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 12:17:43 by aamoussa          #+#    #+#             */
-/*   Updated: 2022/05/30 21:04:33 by aamoussa         ###   ########.fr       */
+/*   Updated: 2022/06/03 18:48:50 by aamoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,5 @@ void	ft_datatoarray(t_list *stack)
 			var.tmp->content = var.i;
 		var.tmp = var.tmp->next;
 	}
+	free(var.arr);
 }

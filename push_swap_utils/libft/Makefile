@@ -1,6 +1,6 @@
 CC = cc
 
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g
 
 SRCS =	ft_atoi.c  ft_isdigit.c ft_putstr_fd.c ft_split.c ft_strchr.c\
 		ft_strlen.c ft_strnstr.c ft_strchr.c ft_strtrim.c ft_substr.c ft_issorted.c get_next_line_utils.c
