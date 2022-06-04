@@ -6,7 +6,7 @@
 /*   By: aamoussa <aamoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 15:20:55 by aamoussa          #+#    #+#             */
-/*   Updated: 2022/02/20 10:15:47 by aamoussa         ###   ########.fr       */
+/*   Updated: 2022/06/04 14:27:27 by aamoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,28 +64,28 @@ void	ft_clean_stack_a(t_list **stack_a, t_list **stack_b, int *bits)
 	}
 }
 
-void	radix(t_list *stack_a, t_list *stack_b, int stack_size)
+void	radix(t_list **stack_a, t_list *stack_b, int stack_size)
 {
 	int	i;
 	int	bits;
 
 	i = 0;
 	bits = 0;
-	while (!ft_issorted(stack_a))
+	while (!ft_issorted(*stack_a))
 	{
 		i = 0;
-		stack_size = ft_lstsize(stack_a);
+		stack_size = ft_lstsize(*stack_a);
 		while (i++ < stack_size)
 		{	
-			if (ft_issorted(stack_a) && ft_issortedtwo(stack_b)
+			if (ft_issorted(*stack_a) && ft_issortedtwo(stack_b)
 				&& ft_lstsize(stack_b) != 1)
 			{
-				push_all_stack_a(&stack_a, &stack_b);
-				exit(1);
+				push_all_stack_a(stack_a, &stack_b);
+				return ;
 			}
-			ft_clean_stack_a(&stack_a, &stack_b, &bits);
+			ft_clean_stack_a(stack_a, &stack_b, &bits);
 		}
-		push_to_stack_a(&stack_a, &stack_b, bits);
+		push_to_stack_a(stack_a, &stack_b, bits);
 		bits++;
 	}
 }

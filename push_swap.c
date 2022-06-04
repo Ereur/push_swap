@@ -6,7 +6,7 @@
 /*   By: aamoussa <aamoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 09:31:00 by aamoussa          #+#    #+#             */
-/*   Updated: 2022/06/03 18:41:25 by aamoussa         ###   ########.fr       */
+/*   Updated: 2022/06/04 14:27:51 by aamoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,17 @@ int	main(int ac, char **argv)
 	{
 		stack_a = ft_check_args(ac, argv);
 		if (ft_lstsize(stack_a) <= 3)
-			ft_sort_nbr(stack_a, ft_lstsize(stack_a));
+		{
+			ft_sort_nbr(&stack_a, ft_lstsize(stack_a));
+		}
 		else if (ft_lstsize(stack_a) <= 5)
-			ft_sort_five_nbr(stack_a, stack_b);
+			ft_sort_five_nbr(&stack_a, stack_b);
 		else
 		{
 			ft_datatoarray(stack_a);
-			radix(stack_a, stack_b, ft_lstsize(stack_a));
+			radix(&stack_a, stack_b, ft_lstsize(stack_a));
 		}
-		free_list(stack_a);
+		free_list(stack_a); 
 	}
 	return (0);
 }

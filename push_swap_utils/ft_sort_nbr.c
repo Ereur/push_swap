@@ -6,7 +6,7 @@
 /*   By: aamoussa <aamoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 07:37:08 by aamoussa          #+#    #+#             */
-/*   Updated: 2022/02/17 11:43:28 by aamoussa         ###   ########.fr       */
+/*   Updated: 2022/06/04 14:14:41 by aamoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,29 +47,29 @@ int	positionfstack(t_list *stack, int nb)
 	return (i);
 }
 
-void	ft_sort_nbr(t_list *stack, int stack_size)
+void	ft_sort_nbr(t_list **stack, int stack_size)
 {
-	if (ft_issorted(stack))
+	if (ft_issorted(*stack))
 		return ;
-	if (stack_size <= 2 && !ft_issorted(stack))
+	if (stack_size <= 2 && !ft_issorted(*stack))
 	{
-		swap(&stack);
+		swap(stack);
 		write (1, "sa\n", 3);
 		return ;
 	}
-	if (positionfstack(stack, ft_slnumber(stack, 'L')) == 1)
+	if (positionfstack(*stack, ft_slnumber(*stack, 'L')) == 1)
 	{	
-		rotate(&stack);
+		rotate(stack);
 		write(1, "ra\n", 3);
 	}
-	else if (positionfstack(stack, ft_slnumber(stack, 'L')) == 2)
+	else if (positionfstack(*stack, ft_slnumber(*stack, 'L')) == 2)
 	{	
-		rrotate(&stack);
+		rrotate(stack);
 		write(1, "rra\n", 4);
 	}
-	if (stack->content > stack->next->content)
+	if ((*stack)->content > (*stack)->next->content)
 	{
-		swap(&stack);
+		swap(stack);
 		write(1, "sa\n", 3);
 	}
 }

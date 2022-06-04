@@ -6,7 +6,7 @@
 /*   By: aamoussa <aamoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 09:43:17 by aamoussa          #+#    #+#             */
-/*   Updated: 2022/05/30 21:08:16 by aamoussa         ###   ########.fr       */
+/*   Updated: 2022/06/04 14:25:35 by aamoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,10 @@ void		rrotate(t_list **stack);
 void		selectionsort(t_list **stack_a, t_list **stack_b);
 int			positionfstack(t_list *stack, int nb);
 int			ft_slnumber(t_list *stack, char spe);
-void		ft_sort_nbr(t_list *stack, int stack_size);
-void		ft_sort_five_nbr(t_list *stack, t_list *stack_b);
+void		ft_sort_nbr(t_list **stack, int stack_size);
+void		ft_sort_five_nbr(t_list **stack, t_list *stack_b);
 void		ft_datatoarray(t_list *stack);
-void		radix(t_list *stack_a, t_list *stack_b, int stack_size);
+void		radix(t_list **stack_a, t_list *stack_b, int stack_size);
 void		rrr(t_list	**stack_a, t_list **stack_b);
 void		push_all_stack_a(t_list **stack_a, t_list **stack_b);
 int			ft_issortedtwo(t_list *stack);
