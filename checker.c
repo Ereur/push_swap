@@ -6,7 +6,7 @@
 /*   By: aamoussa <aamoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 10:58:18 by aamoussa          #+#    #+#             */
-/*   Updated: 2022/05/30 22:43:48 by aamoussa         ###   ########.fr       */
+/*   Updated: 2022/06/21 12:25:40 by aamoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	get_line(t_list **stack_a, t_list **stack_b)
 	char	*line;
 	int		indix;
 
-	str = "sa\nsb\nss\npa\npb\nra\nrb\nrr\nrra\nrrb\nrrr";
+	str = "sa\nsb\nss\npa\npb\nra\nrb\nrr\nrra\nrrb\nrrr\n";
 	while (1)
 	{
 		line = get_next_line(0);

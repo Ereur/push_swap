@@ -6,7 +6,7 @@
 /*   By: aamoussa <aamoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 13:39:49 by aamoussa          #+#    #+#             */
-/*   Updated: 2022/05/30 22:43:20 by aamoussa         ###   ########.fr       */
+/*   Updated: 2022/06/21 13:47:09 by aamoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ int	ft_digits(char *str)
 	strlen = ft_strlen(str);
 	if (ft_check_space(str))
 		return (1);
-	i = 0;
 	while (i < strlen)
 	{
 		while (str[i] && str[i] == ' ')
@@ -50,8 +49,14 @@ int	ft_digits(char *str)
 				&& ft_isdigit(str[i + 1]))
 				i++;
 		}
-		if (str[i + 1] && (str[i] == '-' || str[i] == '+'))
-			i++;
+		sign_handler(str, &i);
+		// if (str[i + 1] && (str[i] == '-' || str[i] == '+'))
+		// {	
+		// 	if (i != 0 && str[i - 1] == ' ')
+		// 		i++;
+		// 	else if (i == 0)
+		// 		i++;
+		// }
 		while (str[i] && !ft_isdigit(str[i++]))
 			return (1);
 	}

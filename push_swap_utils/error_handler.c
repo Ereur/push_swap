@@ -6,7 +6,7 @@
 /*   By: aamoussa <aamoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 09:15:09 by aamoussa          #+#    #+#             */
-/*   Updated: 2022/02/19 08:39:17 by aamoussa         ###   ########.fr       */
+/*   Updated: 2022/06/21 13:48:10 by aamoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,21 @@ void	ft_free_clean_args(char **clean_args)
 		free(clean_args[j++]);
 	}
 	free(clean_args);
+}
+
+void sign_handler(char *str, int *a)
+{
+	int i;
+	
+	i = *a;
+	if (str[i + 1] && (str[i] == '-' || str[i] == '+'))
+	{	
+		if (i != 0 && str[i - 1] == ' ')
+			i++;
+		else if (i == 0)
+			i++;
+	}
+	*a = i;
 }
 
 void	ft_check_int(long *digit, char **clean_args, t_list **head, int i)

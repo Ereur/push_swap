@@ -6,7 +6,7 @@
 /*   By: aamoussa <aamoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 09:43:17 by aamoussa          #+#    #+#             */
-/*   Updated: 2022/06/04 14:25:35 by aamoussa         ###   ########.fr       */
+/*   Updated: 2022/06/21 13:47:24 by aamoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,6 @@ void		push_all_stack_a(t_list **stack_a, t_list **stack_b);
 int			ft_issortedtwo(t_list *stack);
 void		ft_free_clean_args(char **clean_args);
 void		ft_check_int(long *digit, char **clean_args, t_list **head, int i);
+void		sign_handler(char *str, int *a);
 
 #endif

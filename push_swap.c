@@ -6,7 +6,7 @@
 /*   By: aamoussa <aamoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 09:31:00 by aamoussa          #+#    #+#             */
-/*   Updated: 2022/06/04 14:27:51 by aamoussa         ###   ########.fr       */
+/*   Updated: 2022/06/21 12:28:57 by aamoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	free_list(t_list *stack)
 		free(tmp);
 	}
 }
+
 int	main(int ac, char **argv)
 {
 	t_list	*stack_a;
@@ -44,7 +45,7 @@ int	main(int ac, char **argv)
 			ft_datatoarray(stack_a);
 			radix(&stack_a, stack_b, ft_lstsize(stack_a));
 		}
-		free_list(stack_a); 
+		free_list(stack_a);
 	}
 	return (0);
 }
